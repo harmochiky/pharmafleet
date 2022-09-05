@@ -1,0 +1,19 @@
+@import "./palette.scss";
+
+:root {
+  --pale-cerulean: #a0b8caff;
+  --prussian-blue: #133963ff;
+  --beau-blue: #d3e1eaff;
+  --cerulean-crayola: #20a9daff;
+  --white: #ffffffff;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.top_container {
+  padding: 20px;
+  background: var(--prussian-blue);
+}
