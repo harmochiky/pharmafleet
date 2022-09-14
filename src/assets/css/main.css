@@ -4,14 +4,49 @@
   --beau-blue: #d3e1eaff;
   --cerulean-crayola: #20a9daff;
   --white: #ffffffff;
+  --background-grey: #f2f3f5;
 }
 
 body {
   padding: 0;
   margin: 0;
+  background-color: var(--background-grey);
+}
+
+.t14 {
+  font-size: 14px;
 }
 
 .top_container {
   padding: 20px;
   background: var(--prussian-blue);
+}
+
+footer .footer-logo {
+  height: 30px;
+}
+footer .promo-text {
+  color: var(--prussian-blue);
+  font-size: 14px;
+}
+footer .first-container {
+  background-color: var(--white);
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+footer .first-container .payment-methods {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid var(--background-grey);
+}
+footer .botton-container {
+  display: flex;
+  justify-content: space-between;
+}
+footer .botton-container ul {
+  list-style: none;
+  display: flex;
+}
+footer .botton-container ul li {
+  padding-left: 10px;
 }/*# sourceMappingURL=main.css.map */
