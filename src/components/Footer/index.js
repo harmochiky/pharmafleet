@@ -10,7 +10,7 @@ export default function index() {
         <div className="footer-content">
           <div className="container-fluid">
             <div className="row">
-              <div className="col-3 border-right-1 p-3">
+              <div className="col-3 border-right p-3">
                 <div>
                   <img className="footer-logo" src={Logo} />
                   <div className="promo-text py-4">
@@ -20,7 +20,46 @@ export default function index() {
                   </div>
                 </div>
               </div>
-              <div className="col-9"></div>
+              <div className="col-9 px-3">
+                <div className="container-fluid h-100">
+                  <div className="row h-100">
+                    <div className="col-3">
+                      <div className="bold">Business</div>
+                      <ul>
+                        <li>Become a customer</li>
+                        <li>Verify licence</li>
+                      </ul>
+                    </div>
+                    <div className="col-3">
+                      <div className="bold">Categories</div>
+                      <ul>
+                        <li>Devices</li>
+                        <li>Family Care</li>
+                        <li>Fitness</li>
+                        <li>Lifestyle</li>
+                        <li>Personal care</li>
+                      </ul>
+                    </div>
+                    <div className="col-3">
+                      <div className="bold">Our service</div>
+                      <ul>
+                        <li>Shipping</li>
+                        <li>Returns</li>
+                        <li>Contact Us</li>
+                        <li>Site Map</li>
+                      </ul>
+                    </div>
+                    <div className="col-3 border-left pl-3">
+                      <div className="bold">Socials</div>
+                      <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Email</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

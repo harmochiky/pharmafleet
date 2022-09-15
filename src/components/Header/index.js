@@ -1,9 +1,17 @@
 import React from "react";
+import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
 export default function index() {
   return (
     <header>
-      <div className="top_container"></div>
+      <div className="top-container px-5">
+        <div>Free Shipping for orders over R2000</div>
+        <div className="t-header-icons">
+          <FaFacebookF />
+          <FaTwitter />
+          <FaInstagram />
+        </div>
+      </div>
     </header>
   );
 }

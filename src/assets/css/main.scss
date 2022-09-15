@@ -7,6 +7,7 @@
   --cerulean-crayola: #20a9daff;
   --white: #ffffffff;
   --background-grey: #f2f3f5;
+  --grey: rgb(158, 158, 158);
 }
 
 body {
@@ -19,9 +20,29 @@ body {
   font-size: 14px;
 }
 
-.top_container {
-  padding: 20px;
-  background: var(--prussian-blue);
+header {
+  .top-container {
+    padding: 15px 20px 15px 20px;
+    background: var(--prussian-blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--white);
+    div:nth-child(1) {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .t-header-icons {
+      svg {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+.bold {
+  font-weight: 700;
 }
 
 footer {
@@ -38,6 +59,19 @@ footer {
     background-color: var(--white);
     border-radius: 15px;
     margin-bottom: 20px;
+
+    .footer-content {
+      .bold {
+        margin-bottom: 10px;
+      }
+      ul {
+        list-style: none;
+        padding-left: 0;
+        li {
+          color: var(--grey);
+        }
+      }
+    }
     .payment-methods {
       display: flex;
       justify-content: center;
@@ -54,6 +88,7 @@ footer {
       display: flex;
       li {
         padding-left: 10px;
+        font-size: 13px;
       }
     }
   }

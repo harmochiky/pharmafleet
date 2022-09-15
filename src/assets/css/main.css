@@ -5,6 +5,7 @@
   --cerulean-crayola: #20a9daff;
   --white: #ffffffff;
   --background-grey: #f2f3f5;
+  --grey: rgb(158, 158, 158);
 }
 
 body {
@@ -17,9 +18,24 @@ body {
   font-size: 14px;
 }
 
-.top_container {
-  padding: 20px;
+header .top-container {
+  padding: 15px 20px 15px 20px;
   background: var(--prussian-blue);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--white);
+}
+header .top-container div:nth-child(1) {
+  font-size: 14px;
+  font-weight: 600;
+}
+header .top-container .t-header-icons svg {
+  margin-left: 10px;
+}
+
+.bold {
+  font-weight: 700;
 }
 
 footer .footer-logo {
@@ -33,6 +49,16 @@ footer .first-container {
   background-color: var(--white);
   border-radius: 15px;
   margin-bottom: 20px;
+}
+footer .first-container .footer-content .bold {
+  margin-bottom: 10px;
+}
+footer .first-container .footer-content ul {
+  list-style: none;
+  padding-left: 0;
+}
+footer .first-container .footer-content ul li {
+  color: var(--grey);
 }
 footer .first-container .payment-methods {
   display: flex;
@@ -49,4 +75,5 @@ footer .botton-container ul {
 }
 footer .botton-container ul li {
   padding-left: 10px;
+  font-size: 13px;
 }/*# sourceMappingURL=main.css.map */
