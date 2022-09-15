@@ -18,6 +18,82 @@ body {
   font-size: 14px;
 }
 
+header .normal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--white);
+}
+header .normal-header .left-section {
+  display: flex;
+  align-items: center;
+}
+header .normal-header .left-section .logo-container {
+  height: 30px;
+  margin-right: 20px;
+}
+header .normal-header .left-section .header-under-search-links {
+  margin-top: 10px;
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+}
+header .normal-header .left-section .header-under-search-links li {
+  margin-right: 20px;
+  font-weight: 600;
+  font-size: 14px;
+}
+header .normal-header .left-section .search-container {
+  display: flex;
+  border: 1px solid var(--grey);
+  border-radius: 30px;
+  overflow: hidden;
+  height: 35px;
+  width: 550px;
+  padding: 2px 2px 2px 0;
+}
+header .normal-header .left-section .search-container input {
+  padding: 5px 10px 5px 10px;
+  flex: 1;
+}
+header .normal-header .left-section .search-container button {
+  padding: 0px 15px 0px 15px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--beau-blue);
+  border-radius: 15px;
+}
+header .normal-header .left-section .search-container button svg {
+  font-size: 20px;
+}
+header .normal-header .left-section .search-container input,
+header .normal-header .left-section .search-container button {
+  border: none;
+  outline: none;
+}
+header .normal-header .right-section {
+  display: flex;
+  align-items: center;
+}
+header .normal-header .right-section .sign-in-text {
+  font-weight: 600;
+}
+header .normal-header .right-section .summary-section {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+header .normal-header .right-section .summary-section .sum-item {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+header .normal-header .right-section .summary-section .sum-item .icon {
+  font-size: 27px;
+}
 header .top-container {
   padding: 15px 20px 15px 20px;
   background: var(--prussian-blue);
@@ -31,7 +107,7 @@ header .top-container div:nth-child(1) {
   font-weight: 600;
 }
 header .top-container .t-header-icons svg {
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 .bold {

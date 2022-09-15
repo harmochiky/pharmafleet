@@ -1,5 +1,6 @@
 import React from "react";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import NormalHeader from "./NormalHeader";
 
 export default function index() {
   return (
@@ -12,6 +13,7 @@ export default function index() {
           <FaInstagram />
         </div>
       </div>
+      <NormalHeader />
     </header>
   );
 }
