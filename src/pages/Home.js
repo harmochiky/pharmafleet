@@ -1,5 +1,10 @@
 import React from "react";
+import CategoryHeader from "../components/Home/CategoryHeader";
 
 export default function Home() {
-  return <div>Home</div>;
+  return (
+    <section>
+      <CategoryHeader />
+    </section>
+  );
 }
