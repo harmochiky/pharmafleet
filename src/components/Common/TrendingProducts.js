@@ -9,7 +9,7 @@ export default function TrendingProducts() {
         <div className="row">
           <div className="col-8">
             <div>
-              <h4 className="bold mb-4">Trending Products</h4>
+              <h4 className="bold mb-2">Trending Products</h4>
             </div>
             <div>
               <ProductListType4 />

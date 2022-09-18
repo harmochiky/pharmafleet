@@ -3,7 +3,7 @@ import ProductImg from "../../assets/img/product-sample-300x300.jpg";
 
 export default function ProductCard2() {
   return (
-    <div className="col-6 pb-3 pr-3">
+    <div className="col-6 pt-3 pr-3">
       <div className="product-card-2-container p-3">
         <div>
           <img className="product-image" src={ProductImg} alt="" />
