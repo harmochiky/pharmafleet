@@ -5,7 +5,7 @@
   --beau-blue: #d3e1eaff;
   --cerulean-crayola: #20a9daff;
   --white: #ffffffff;
-  --background-grey: #f2f3f5;
+  --background-grey: #f5f5f5;
   --grey: rgb(158, 158, 158);
 }
 
@@ -153,4 +153,29 @@ footer .botton-container ul {
 footer .botton-container ul li {
   padding-left: 10px;
   font-size: 13px;
+}
+
+.product-card-2-container {
+  background: var(--white);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+.product-card-2-container .product-image {
+  width: 140px;
+  height: 140px;
+}
+.product-card-2-container .product-name {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.product-card-2-container .product-category {
+  font-size: 14px;
+  color: var(--grey);
+}
+.product-card-2-container .product-price {
+  font-weight: 700;
+  color: var(--prussian-blue);
 }/*# sourceMappingURL=main.css.map */
