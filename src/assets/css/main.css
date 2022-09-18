@@ -178,4 +178,11 @@ footer .botton-container ul li {
 .product-card-2-container .product-price {
   font-weight: 700;
   color: var(--prussian-blue);
+}
+
+.trending-product-container {
+  background: var(--white);
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
 }/*# sourceMappingURL=main.css.map */

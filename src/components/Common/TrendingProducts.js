@@ -1,5 +1,6 @@
 import React from "react";
 import ProductListType4 from "../ProductListing/ProductListType4";
+import TrendingProductType1 from "../ProductListing/TrendingProductType1";
 
 export default function TrendingProducts() {
   return (
@@ -14,7 +15,9 @@ export default function TrendingProducts() {
               <ProductListType4 />
             </div>
           </div>
-          <div className="col-4">Trending products</div>
+          <div className="col-4">
+            <TrendingProductType1 />
+          </div>
         </div>
       </div>
     </div>
