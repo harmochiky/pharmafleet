@@ -305,3 +305,15 @@ footer {
     border-radius: 35px;
   }
 }
+
+.app-wrapper {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  position: relative;
+  .nav-side {
+    width: 330px;
+    height: 100%;
+    background: var(--background-grey);
+  }
+}

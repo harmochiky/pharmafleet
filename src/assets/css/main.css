@@ -275,4 +275,16 @@ footer .botton-container ul li {
   font-weight: 700;
   padding: 6px;
   border-radius: 35px;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  position: relative;
+}
+.app-wrapper .nav-side {
+  width: 330px;
+  height: 100%;
+  background: var(--background-grey);
 }/*# sourceMappingURL=main.css.map */
