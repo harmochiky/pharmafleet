@@ -3,6 +3,7 @@ import { IoBagOutline, IoHeartOutline } from "react-icons/io5";
 import { BiSearch } from "react-icons/bi";
 import Logo from "../../assets/img/logo.png";
 import { NavLink } from "react-router-dom";
+import SearchContainer from "../Search/SearchContainer";
 
 export default function NormalHeader() {
   return (
@@ -12,12 +13,7 @@ export default function NormalHeader() {
           <img src={Logo} className="logo-container" />
         </div>
         <div>
-          <div className="search-container">
-            <input placeholder="Search PharmaFleet..." className="search-bar" />
-            <button>
-              <BiSearch />
-            </button>
-          </div>
+          <SearchContainer />
           <div>
             <ul className="header-under-search-links secondary-text">
               <li>
