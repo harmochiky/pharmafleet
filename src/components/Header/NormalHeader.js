@@ -2,6 +2,7 @@ import React from "react";
 import { IoBagOutline, IoHeartOutline } from "react-icons/io5";
 import { BiSearch } from "react-icons/bi";
 import Logo from "../../assets/img/logo.png";
+import { NavLink } from "react-router-dom";
 
 export default function NormalHeader() {
   return (
@@ -19,10 +20,18 @@ export default function NormalHeader() {
           </div>
           <div>
             <ul className="header-under-search-links secondary-text">
-              <li>Home</li>
-              <li>Shop</li>
-              <li>Contact</li>
-              <li>Apply</li>
+              <li>
+                <NavLink to="/">Home</NavLink>
+              </li>
+              <li>
+                <NavLink to="/shop">Shop</NavLink>
+              </li>
+              <li>
+                <NavLink to="/contact">Contact</NavLink>
+              </li>
+              <li>
+                <NavLink to="/apply">Apply to order</NavLink>
+              </li>
             </ul>
           </div>
         </div>

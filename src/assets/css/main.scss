@@ -44,6 +44,13 @@ header {
           margin-right: 20px;
           font-weight: 600;
           font-size: 14px;
+          a {
+            text-decoration: none;
+            color: rgb(37, 37, 37);
+            &.active {
+              color: var(--prussian-blue);
+            }
+          }
         }
       }
       .search-container {
@@ -255,5 +262,46 @@ footer {
       font-weight: 700;
       margin-right: 10px;
     }
+  }
+}
+
+.input-wrapper {
+  position: relative;
+
+  input,
+  button {
+    border: none;
+    border: 0;
+    outline: none;
+  }
+
+  .with-btn-container {
+    border: 1px solid var(--grey);
+    width: 45%;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 35px;
+    padding: 5px;
+    background-color: var(--white);
+  }
+
+  .text-input {
+    background-color: var(--white);
+    flex: 1;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .submit-btn {
+    background-color: var(--prussian-blue);
+    color: var(--white);
+    height: 100%;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 6px;
+    border-radius: 35px;
   }
 }

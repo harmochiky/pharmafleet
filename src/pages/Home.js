@@ -1,4 +1,5 @@
 import React from "react";
+import RequestCallBack from "../components/Common/RequestCallBack";
 import TrendingProducts from "../components/Common/TrendingProducts";
 import CategoryHeader from "../components/Home/CategoryHeader";
 import HomeOrderingInfo from "../components/Home/HomeOrderingInfo";
@@ -13,6 +14,7 @@ export default function Home() {
       <TrendingProducts />
       <HomeOrderingInfo />
       <TrendingProducts />
+      <RequestCallBack />
     </section>
   );
 }

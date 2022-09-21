@@ -44,6 +44,13 @@ header .normal-header .left-section .header-under-search-links li {
   font-weight: 600;
   font-size: 14px;
 }
+header .normal-header .left-section .header-under-search-links li a {
+  text-decoration: none;
+  color: rgb(37, 37, 37);
+}
+header .normal-header .left-section .header-under-search-links li a.active {
+  color: var(--prussian-blue);
+}
 header .normal-header .left-section .search-container {
   display: flex;
   border: 1px solid var(--grey);
@@ -231,4 +238,41 @@ footer .botton-container ul li {
   font-size: 16px;
   font-weight: 700;
   margin-right: 10px;
+}
+
+.input-wrapper {
+  position: relative;
+}
+.input-wrapper input,
+.input-wrapper button {
+  border: none;
+  border: 0;
+  outline: none;
+}
+.input-wrapper .with-btn-container {
+  border: 1px solid var(--grey);
+  width: 45%;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 35px;
+  padding: 5px;
+  background-color: var(--white);
+}
+.input-wrapper .text-input {
+  background-color: var(--white);
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+}
+.input-wrapper .submit-btn {
+  background-color: var(--prussian-blue);
+  color: var(--white);
+  height: 100%;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 6px;
+  border-radius: 35px;
 }/*# sourceMappingURL=main.css.map */
