@@ -8,11 +8,11 @@ import "swiper/css/pagination";
 
 export default function HomeSlider() {
   return (
-    <div className="px-5">
+    <div className="container-fluid mt-0 ec-main-slider section section-space-pb">
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         pagination={{ clickable: true }}
-        className="slider-container"
+        className="ec-slider"
         spaceBetween={0}
         slidesPerView={1}
       >

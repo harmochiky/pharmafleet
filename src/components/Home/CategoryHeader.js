@@ -2,6 +2,7 @@ import React from "react";
 import { GiMedicines } from "react-icons/gi";
 
 export default function CategoryHeader() {
+  return null;
   return (
     <div className="category-header py-4 px-5">
       <CH_Item />

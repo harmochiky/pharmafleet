@@ -1,5 +1,5 @@
 const initialData = {
-  authenticated: true,
+  authenticated: false,
 };
 
 const coreReducer = (state = initialData, actions) => {
