@@ -277,4 +277,77 @@ footer .botton-container ul li {
 .ec-spe-products .slick-arrow.slick-next {
   right: -10px;
   left: auto;
+}
+
+.ec-services-section .ec_ser_block {
+  margin: 0 auto;
+  border: 1px solid #eeeeee;
+  margin-top: 30px;
+  padding: 15px 20px;
+  background-color: #fff;
+  border-radius: 15px;
+}
+.ec-services-section .ec_ser_content:not(:last-child) .ec_ser_inner {
+  border-bottom: 1px solid #eeeeee;
+}
+
+.ec_ser_inner {
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  padding: 12px 0;
+  flex-direction: row;
+}
+.ec_ser_inner:hover .ec-service-image svg {
+  fill: var(--prussian-blue);
+}
+.ec_ser_inner .ec-service-image {
+  margin-right: 10px;
+  margin-left: 13px;
+  min-width: 66px;
+}
+.ec_ser_inner .ec-service-image svg {
+  transition: all 0.3s ease-in-out;
+  width: 40px;
+  height: 40px;
+  fill: #46c389;
+}
+
+.ec_ser_content_2 .ec_ser_inner .ec-service-image svg {
+  width: 40px;
+  height: 40px;
+}
+
+.ec_ser_content_3 .ec_ser_inner .ec-service-image svg {
+  width: 34px;
+  height: 34px;
+}
+
+.ec_ser_content_4 .ec_ser_inner .ec-service-image svg {
+  width: 38px;
+  height: 38px;
+}
+
+.ec_ser_content_5 .ec_ser_inner .ec-service-image svg {
+  width: 40px;
+  height: 40px;
+}
+
+.ec-service-desc h2 {
+  font-size: 13px;
+  color: #777777;
+  letter-spacing: 0;
+  margin-bottom: 9px;
+  text-transform: capitalize;
+  font-weight: 600;
+  text-align: left;
+}
+.ec-service-desc p {
+  font-size: 13px;
+  color: #777;
+  line-height: 18px;
+  letter-spacing: 0;
+  text-align: left;
+  padding-right: 5px;
 }/*# sourceMappingURL=p_f.css.map */

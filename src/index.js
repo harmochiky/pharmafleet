@@ -16,8 +16,8 @@ import "./assets/css/plugins/bootstrap.css";
 
 import "./assets/css/home.css";
 import "./assets/css/style.css";
-import "./assets/css/responsive.css";
 import "./assets/css/p_f.css"
+import "./assets/css/responsive.css";
 // import "./assets/scss/main.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

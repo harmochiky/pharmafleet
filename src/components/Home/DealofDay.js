@@ -12,8 +12,8 @@ export default function DealofDay() {
           {/*  Special Section Start */}
           <div className="ec-spe-section col-lg-9 col-md-9 col-sm-9 sectopn-spc-mb">
             <div className="col-md-12">
-              <div className="section-title">
-                <h2 className="ec-title">Deal of the day</h2>
+              <div className="section-title pl-0">
+                <h2 className="ec-title pl-0">Deal of the day</h2>
               </div>
             </div>
             <div className="ec-spe-products slick-initialized slick-slider">
@@ -151,8 +151,8 @@ export default function DealofDay() {
           {/*  services Section Start */}
           <div className="ec-services-section col-lg-3 col-md-3 col-sm-3">
             <div className="col-md-12">
-              <div className="section-title">
-                <h2 className="ec-title">Our Services</h2>
+              <div className="section-title text-left">
+                <h2 className="ec-title text-left pl-0">Services</h2>
               </div>
             </div>
             <div className="ec_ser_block">
