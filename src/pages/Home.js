@@ -1,5 +1,6 @@
 import React from "react";
 import RequestCallBack from "../components/Common/RequestCallBack";
+import Services from "../components/Common/Services";
 import TrendingProducts from "../components/Common/TrendingProducts";
 import Banner2 from "../components/Home/Banner2";
 import CategoryHeader from "../components/Home/CategoryHeader";
@@ -12,6 +13,7 @@ export default function Home() {
     <section>
       <HomeSlider />
       <DealofDay />
+    <Services/>
       <Banner2 />
     </section>
   );

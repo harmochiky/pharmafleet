@@ -19,7 +19,7 @@ footer .promo-text {
   font-size: 14px;
 }
 footer .first-container {
-  background-color: var(--white);
+  background: var(--background-grey);
   border-radius: 15px;
   margin-bottom: 20px;
 }
@@ -74,18 +74,39 @@ footer .botton-container ul li {
   color: var(--white);
 }
 
+.ec-header-bottons .ec-header-btn {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.ec-header-bottons .ec-header-btn .ec-btn-desc {
+  margin-left: 5px;
+  display: flex;
+  flex-direction: column;
+  line-height: 18px;
+}
 .ec-header-bottons .header_svg {
   fill: var(--prussian-blue);
+  width: 30px;
+  height: 30px;
 }
 .ec-header-bottons .ec-header-btn .ec-header-count {
   background-color: var(--cerulean-crayola);
 }
 
 .header-search .form-control {
+  background-color: var(--background-grey);
   border-radius: 20px;
+  height: 40px;
+  min-height: 40px;
 }
 .header-search .submit {
   width: 55px;
+}
+.header-search .submit .header_svg {
+  fill: var(--prussian-blue);
+  height: 18px;
+  width: 18px;
 }
 
 .ec-spe-section .ec-spe-products {
@@ -350,4 +371,16 @@ footer .botton-container ul li {
   letter-spacing: 0;
   text-align: left;
   padding-right: 5px;
+}
+
+.bc-container {
+  background-color: var(--background-grey);
+}
+
+.bg-primary {
+  background-color: var(--prussian-blue) !important;
+}
+
+.ec-header-bottom {
+  padding: 12px 0;
 }/*# sourceMappingURL=p_f.css.map */
