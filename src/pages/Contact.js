@@ -89,8 +89,15 @@ export default function Contact() {
                   <div className="ec_map_canvas">
                     <iframe
                       id="ec_map_canvas"
-                      src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d71263.65594328841!2d144.93151478652146!3d-37.8734290780509!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1615963387757!5m2!1sen!2sus"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.3892389659236!2d27.995621514975365!3d-26.18401348344682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950b936f07e825%3A0xe635702a737f7a4a!2sUniversity%20Of%20Johannesburg!5e0!3m2!1sen!2sza!4v1665081774199!5m2!1sen!2sza"
+                      width={600}
+                      height={450}
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
                     />
+
                     <a href="https://sites.google.com/view/maps-api-v2/mapv2" />
                   </div>
                 </div>

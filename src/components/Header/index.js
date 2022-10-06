@@ -339,11 +339,7 @@ export default function index() {
                   href="javascript:void(0)"
                   className="ec-header-btn ec-sidebar-toggle"
                 >
-                  <img
-                    src={CategoryIcon}
-                    className="svg_img header_svg"
-                    alt="icon"
-                  />
+                  <button className="btn btn-menu-pr-btn">Start order</button>
                 </a>
                 <ul>
                   <li>

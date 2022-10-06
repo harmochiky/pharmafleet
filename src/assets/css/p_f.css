@@ -6,6 +6,7 @@
   --white: #ffffffff;
   --background-grey: #f8f7f8;
   --grey: #9e9e9e;
+  --black: #000;
 }
 
 footer {
@@ -78,6 +79,7 @@ footer .botton-container ul li {
   display: flex;
   align-items: center;
   flex-direction: row;
+  flex: none;
 }
 .ec-header-bottons .ec-header-btn .ec-btn-desc {
   margin-left: 5px;
@@ -86,7 +88,6 @@ footer .botton-container ul li {
   line-height: 18px;
 }
 .ec-header-bottons .header_svg {
-  fill: var(--prussian-blue);
   width: 30px;
   height: 30px;
 }
@@ -96,9 +97,10 @@ footer .botton-container ul li {
 
 .header-search .form-control {
   background-color: var(--background-grey);
-  border-radius: 20px;
+  border-radius: 10px;
   height: 40px;
   min-height: 40px;
+  border: 1px solid rgba(158, 158, 158, 0.2117647059);
 }
 .header-search .submit {
   width: 55px;
@@ -383,4 +385,25 @@ footer .botton-container ul li {
 
 .ec-header-bottom {
   padding: 12px 0;
+}
+
+.btn-primary {
+  background-color: var(--prussian-blue);
+}
+
+.ec-main-menu .ec-header-btn {
+  flex: none;
+}
+.ec-main-menu .ec-header-btn :hover {
+  color: var(--background-grey);
+}
+.ec-main-menu .ec-header-btn .btn-menu-pr-btn {
+  background-color: var(--black);
+  border-radius: 100px;
+  color: var(--white);
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }/*# sourceMappingURL=p_f.css.map */
