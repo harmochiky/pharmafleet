@@ -9,8 +9,9 @@ import Cart from "../../assets/img/icons/cart.svg";
 import ScrollIcon from "../../assets/img/icons/scroll.svg";
 import MenuIcon from "../../assets/img/icons/menu.svg";
 import CategoryIcon from "../../assets/img/icons/category_icon.svg";
-
 import { Link } from "react-router-dom";
+import menu_items from "../../util/departments.json";
+import textToUrl from "../../util/textToUrl";
 
 export default function index() {
   return (
@@ -346,100 +347,33 @@ export default function index() {
                     <a href="index.html">Home</a>
                   </li>
                   <li className="dropdown">
-                    <a href="javascript:void(0)">Categories</a>
+                    <Link to="">Categories</Link>
                     <ul className="sub-menu">
-                      <li className="dropdown position-static">
-                        <a href="javascript:void(0)">
-                          Product page
-                          <i className="ecicon eci-angle-right" />
-                        </a>
-                        <ul className="sub-menu sub-menu-child">
-                          <li>
-                            <a href="product-left-sidebar.html">
-                              Product left sidebar
-                            </a>
-                          </li>
-                          <li>
-                            <a href="product-right-sidebar.html">
-                              Product right sidebar
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li className="dropdown position-static">
-                        <a href="javascript:void(0)">
-                          Product 360
-                          <i className="ecicon eci-angle-right" />
-                        </a>
-                        <ul className="sub-menu sub-menu-child">
-                          <li>
-                            <a href="product-360-left-sidebar.html">
-                              360 left sidebar
-                            </a>
-                          </li>
-                          <li>
-                            <a href="product-360-right-sidebar.html">
-                              360 right sidebar
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li className="dropdown position-static">
-                        <a href="javascript:void(0)">
-                          Product video
-                          <i className="ecicon eci-angle-right" />
-                        </a>
-                        <ul className="sub-menu sub-menu-child">
-                          <li>
-                            <a href="product-video-left-sidebar.html">
-                              Video left sidebar
-                            </a>
-                          </li>
-                          <li>
-                            <a href="product-video-right-sidebar.html">
-                              Video right sidebar
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li className="dropdown position-static">
-                        <a href="javascript:void(0)">
-                          Product gallery
-                          <i className="ecicon eci-angle-right" />
-                        </a>
-                        <ul className="sub-menu sub-menu-child">
-                          <li>
-                            <a href="product-gallery-left-sidebar.html">
-                              Gallery left sidebar
-                            </a>
-                          </li>
-                          <li>
-                            <a href="product-gallery-right-sidebar.html">
-                              Gallery right sidebar
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <a href="product-full-width.html">Product full width</a>
-                      </li>
-                      <li>
-                        <a href="product-360-full-width.html">360 full width</a>
-                      </li>
-                      <li>
-                        <a href="product-video-full-width.html">
-                          Video full width
-                        </a>
-                      </li>
-                      <li>
-                        <a href="product-gallery-full-width.html">
-                          Gallery full width
-                        </a>
-                      </li>
+                      {menu_items.map((x, index) => (
+                        <li key={index} className="dropdown position-static">
+                          <Link to={`/s/${textToUrl(x.dep_name)}`}>
+                            {x.dep_name}
+                            <i className="ecicon eci-angle-right" />
+                          </Link>
+                          <ul className="sub-menu sub-menu-child">
+                            {x.categories.map((c, cindex) => (
+                              <li key={cindex}>
+                                <Link
+                                  to={`/s/${textToUrl(x.dep_name)}/${textToUrl(
+                                    c.cat_name,
+                                  )}`}
+                                >
+                                  {c.cat_name}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </li>
+                      ))}
                     </ul>
                   </li>
                   <li>
-                    <a href="offer.html">See products</a>
+                    <Link to="/all">See products</Link>
                   </li>
                   <li>
                     <Link to="/apply">Apply</Link>

@@ -1,0 +1,39 @@
+[
+  {
+    "dep_name": "Health",
+    "categories": [
+      {
+        "cat_name": "First Aid"
+      },
+      {
+        "cat_name": "Eye care"
+      },
+      {
+        "cat_name": "Inhalants"
+      },
+      {
+        "cat_name": "Allergies"
+      },
+      {
+        "cat_name": "Cough,Colds & Flu"
+      }
+    ]
+  },
+  {
+    "dep_name": "Healthy Living",
+    "categories": [
+      {
+        "cat_name": "Weight Management"
+      },
+      {
+        "cat_name": "Build Muscle & Strength"
+      },
+      {
+        "cat_name": "Herbal Remedies"
+      },
+      {
+        "cat_name": "Healthy Tech"
+      }
+    ]
+  }
+]

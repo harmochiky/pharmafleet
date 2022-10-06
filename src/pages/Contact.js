@@ -128,18 +128,6 @@ export default function Contact() {
           </div>
         </div>
       </section>
-      <div className="footer-offer bg-primary">
-        <div className="container">
-          <div className="row">
-            <div className="text-center footer-off-msg">
-              <span>Win a contest! Get this limited-editon</span>
-              <a href="#" target="_blank">
-                View Detail
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }
