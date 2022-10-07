@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import DepPage from "./pages/DepPage";
 import CatPage from "./pages/CatPage";
+import Deals from "./pages/Deals";
 import Panel from "./pages/Panel";
 import BuyerApply from "./pages/BuyerApply";
 
@@ -14,6 +15,7 @@ class Router extends React.Component {
     return (
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/deals" component={Deals} />
         <Route exact path="/s/:dep" component={DepPage} />
         <Route exact path="/s/:dep/:cat" component={CatPage} />
         <Route exact path="/contact-us" component={Contact} />

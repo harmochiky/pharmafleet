@@ -568,3 +568,55 @@ footer {
 .text-primary {
   color: var(--prussian-blue) !important;
 }
+
+.section-title .ec-title {
+  color: var(--prussian-blue);
+}
+
+.ec-ser-spe-section {
+  .ec-spe-product {
+    border-right: 1px solid var(--cerulean-crayola);
+  }
+  .section-title {
+    .ec-title {
+      padding: 0;
+    }
+  }
+  .ec-spe-pro-inner {
+    border: 1px solid var(--cerulean-crayola);
+    border-right: 1px solid var(--cerulean-crayola);
+  }
+
+  .ec-service-desc {
+    h2 {
+      padding-bottom: 0;
+      margin-bottom: 2px;
+    }
+  }
+  .ec_ser_block {
+    padding: 10px 10px;
+  }
+  .ec-img-container {
+    height: 80px;
+    width: 80px;
+    // display: flex;
+    align-items: center;
+    // .product-img {
+    //   height: 80px;
+    //   width: 80px;
+    // }
+  }
+  .ec_ser_inner {
+    padding: 0;
+  }
+}
+
+h2,
+.h2 {
+  color: var(--prussian-blue);
+}
+
+h3,
+.h3 {
+  color: var(--prussian-blue);
+}

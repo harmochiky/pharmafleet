@@ -9,7 +9,7 @@ const Bannerimg1 =
 export default function Banner2() {
   return (
     <section className="ec-banner section section-space-p">
-      <h2 className="text-center bold">Here's more</h2>
+      <h3 className="text-center bold">Here's more</h3>
       <div className="text-center mb-4">
         Quickly check out these featured categories
       </div>

@@ -9,26 +9,11 @@ import List from "../assets/images/icons/list.svg";
 import ProductCard from "../components/ProductListing/ProductCard";
 import ProductCardSlider from "../components/ProductListing/ProductCardSlider";
 
-export default function DepPage() {
+export default function Deals() {
   return (
     <div className="border-top">
-      <BreadCrums from="Department" page="Mens" />
-      <DepHeader
-        text="Shop for men at PharmaFleet now and you’ll find great quality products
-      at excellent prices. We offer men’s essentials products in an easy to
-      find categorised menu at PharmaFleet online, or you’ll be able to find
-      all the products you need at a Dis-Chem Pharmacy near you today."
-      />
-      <ProductCardSlider
-        className=" mt-3"
-        headerClassName="border-bottom mb-4 pb-4 w-75 m-auto"
-        title="New products"
-        desc="Check out the newest products in health"
-      />
-      <DepCategories
-        title="Health"
-        desc="You can dive deeper into a category but selecting where you want to go here"
-      />
+      <BreadCrums from="Home" page="Todays Deals" />
+      <DepHeader text="" />
       <section className="ec-page-content-bnr section-space-pb">
         <div className="container">
           <div className="row">

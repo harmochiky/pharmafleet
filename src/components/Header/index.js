@@ -336,17 +336,17 @@ export default function index() {
           <div className="row">
             <div className="col-md-12 align-self-center">
               <div className="ec-main-menu">
-                <a
-                  href="javascript:void(0)"
+                <Link
+                  to="/start-order"
                   className="ec-header-btn ec-sidebar-toggle"
                 >
                   <button className="btn btn-menu-pr-btn my-">
                     Start order
                   </button>
-                </a>
+                </Link>
                 <ul>
                   <li>
-                    <a href="index.html">Home</a>
+                    <Link to="/">Home</Link>
                   </li>
                   <li className="dropdown">
                     <Link to="">Categories</Link>
@@ -375,7 +375,7 @@ export default function index() {
                     </ul>
                   </li>
                   <li>
-                    <Link to="/all">See products</Link>
+                    <Link to="/deals">Todays deals</Link>
                   </li>
                   <li>
                     <Link to="/apply">Apply</Link>
@@ -386,20 +386,20 @@ export default function index() {
                   <li className="dropdown scroll-to">
                     <a href="javascript:void(0)">
                       <img
-                        src={ScrollIcon}
+                        src={MenuIcon}
                         className="svg_img header_svg scroll"
                         alt=""
                       />
                     </a>
                     <ul className="sub-menu">
-                      <li className="menu_title">Scroll To Section</li>
+                      <li className="menu_title">For you</li>
                       <li>
                         <a
                           href="javascript:void(0)"
                           data-scroll="collection"
                           className="nav-scroll"
                         >
-                          Top Collection
+                          Verify account
                         </a>
                       </li>
                       <li>
@@ -408,7 +408,16 @@ export default function index() {
                           data-scroll="arrivals"
                           className="nav-scroll"
                         >
-                          New Arrivals
+                          Become a customer
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="javascript:void(0)"
+                          data-scroll="arrivals"
+                          className="nav-scroll"
+                        >
+                          Track order
                         </a>
                       </li>
                     </ul>

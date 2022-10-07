@@ -496,4 +496,44 @@ footer .botton-container ul li {
 
 .text-primary {
   color: var(--prussian-blue) !important;
+}
+
+.section-title .ec-title {
+  color: var(--prussian-blue);
+}
+
+.ec-ser-spe-section .ec-spe-product {
+  border-right: 1px solid var(--cerulean-crayola);
+}
+.ec-ser-spe-section .section-title .ec-title {
+  padding: 0;
+}
+.ec-ser-spe-section .ec-spe-pro-inner {
+  border: 1px solid var(--cerulean-crayola);
+  border-right: 1px solid var(--cerulean-crayola);
+}
+.ec-ser-spe-section .ec-service-desc h2 {
+  padding-bottom: 0;
+  margin-bottom: 2px;
+}
+.ec-ser-spe-section .ec_ser_block {
+  padding: 10px 10px;
+}
+.ec-ser-spe-section .ec-img-container {
+  height: 80px;
+  width: 80px;
+  align-items: center;
+}
+.ec-ser-spe-section .ec_ser_inner {
+  padding: 0;
+}
+
+h2,
+.h2 {
+  color: var(--prussian-blue);
+}
+
+h3,
+.h3 {
+  color: var(--prussian-blue);
 }/*# sourceMappingURL=p_f.css.map */
