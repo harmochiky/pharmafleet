@@ -544,3 +544,27 @@ footer {
 .ec-slide-item {
   height: 65vh;
 }
+
+.home-order-about {
+  .point {
+    align-items: center;
+    display: flex;
+    margin-bottom: 10px;
+  }
+  .point-number {
+    margin-right: 10px;
+    border: 2px solid var(--prussian-blue);
+    display: flex;
+    width: 33px;
+    height: 33px;
+    border-radius: 100px;
+    font-weight: 700;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    background-color: var(--prussian-blue);
+  }
+}
+.text-primary {
+  color: var(--prussian-blue) !important;
+}

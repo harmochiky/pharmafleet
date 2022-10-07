@@ -14,6 +14,7 @@ export default function Home() {
     <section>
       <HomeSlider />
       <Services />
+      <HomeOrderingInfo />
       <DealofDay />
       <Banner2 />
       <ProductCardSlider
