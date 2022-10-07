@@ -22,12 +22,6 @@ export default function HomeSlider() {
         <SwiperSlide>
           <HomeSliderSlide />
         </SwiperSlide>
-        <SwiperSlide>
-          <HomeSliderSlide />
-        </SwiperSlide>
-        <SwiperSlide>
-          <HomeSliderSlide />
-        </SwiperSlide>
       </Swiper>
     </div>
   );

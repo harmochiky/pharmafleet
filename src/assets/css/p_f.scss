@@ -336,6 +336,18 @@ footer {
 }
 
 .ec-services-section {
+  .ec_ser_inner {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    .ec-service-image {
+      .svg_img {
+        height: 50px;
+        width: 50px;
+        fill: var(--cerulean-crayola);
+      }
+    }
+  }
   .ec_ser_block {
     margin: 0 auto;
     border: 1px solid $border-color-1;
@@ -398,6 +410,11 @@ footer {
     }
   }
 }
+.ec-service-desc {
+  h2 {
+    color: var(--prussian-blue);
+  }
+}
 .ec_ser_content_4 {
   .ec_ser_inner {
     .ec-service-image {
@@ -421,7 +438,6 @@ footer {
 .ec-service-desc {
   h2 {
     font-size: 13px;
-    color: $main-second-text-color;
     letter-spacing: 0;
     margin-bottom: 9px;
     text-transform: $capitalize;
@@ -519,4 +535,12 @@ footer {
 
 .w210px {
   width: 210px;
+}
+
+.banner-block {
+  height: 250px;
+}
+
+.ec-slide-item {
+  height: 65vh;
 }

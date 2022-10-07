@@ -1,10 +1,18 @@
 import React from "react";
-import Bannerimg2 from "../../assets/images/banner/2.jpg";
+// import Bannerimg2 from "../../assets/images/banner/2.jpg";
+
+const Bannerimg2 =
+  "https://www.dischem.co.za/media/wysiwyg/Homepage/5e28328b213a6_beauty_resized.jpg";
+const Bannerimg1 =
+  "https://www.dischem.co.za/media/wysiwyg/63246d9cc0f21_HEALTHY-LIVING-736-x-520.jpg";
 
 export default function Banner2() {
   return (
     <section className="ec-banner section section-space-p">
-      <h2 className="text-center mb-4 bold">Here's more</h2>
+      <h2 className="text-center bold">Here's more</h2>
+      <div className="text-center mb-4">
+        Quickly check out these featured categories
+      </div>
       <div className="container">
         {/* ec Banners Start */}
         <div className="ec-banner-inner">
@@ -18,7 +26,7 @@ export default function Banner2() {
               >
                 <div className="bnr-overlay">
                   <img src={Bannerimg2} alt="" />
-                  <div className="banner-text">
+                  <div className="banner-text d-none">
                     <span className="ec-banner-stitle">New Arrivals</span>
                     <span className="ec-banner-title">
                       mens
@@ -28,7 +36,7 @@ export default function Banner2() {
                   </div>
                   <div className="banner-content">
                     <span className="ec-banner-btn">
-                      <a href="#">Order Now</a>
+                      <a href="#">Shop Now</a>
                     </span>
                   </div>
                 </div>
@@ -39,8 +47,8 @@ export default function Banner2() {
                 data-animated="true"
               >
                 <div className="bnr-overlay">
-                  <img src={Bannerimg2} alt="" />
-                  <div className="banner-text">
+                  <img src={Bannerimg1} alt="" />
+                  <div className="banner-text d-none">
                     <span className="ec-banner-stitle">New Trending</span>
                     <span className="ec-banner-title">
                       Smart
@@ -53,7 +61,7 @@ export default function Banner2() {
                   </div>
                   <div className="banner-content">
                     <span className="ec-banner-btn">
-                      <a href="#">Order Now</a>
+                      <a href="#">Shop Now</a>
                     </span>
                   </div>
                 </div>

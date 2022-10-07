@@ -302,6 +302,16 @@ footer .botton-container ul li {
   left: auto;
 }
 
+.ec-services-section .ec_ser_inner {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.ec-services-section .ec_ser_inner .ec-service-image .svg_img {
+  height: 50px;
+  width: 50px;
+  fill: var(--cerulean-crayola);
+}
 .ec-services-section .ec_ser_block {
   margin: 0 auto;
   border: 1px solid #eeeeee;
@@ -347,6 +357,10 @@ footer .botton-container ul li {
   height: 34px;
 }
 
+.ec-service-desc h2 {
+  color: var(--prussian-blue);
+}
+
 .ec_ser_content_4 .ec_ser_inner .ec-service-image svg {
   width: 38px;
   height: 38px;
@@ -359,7 +373,6 @@ footer .botton-container ul li {
 
 .ec-service-desc h2 {
   font-size: 13px;
-  color: #777777;
   letter-spacing: 0;
   margin-bottom: 9px;
   text-transform: capitalize;
@@ -452,4 +465,12 @@ footer .botton-container ul li {
 
 .w210px {
   width: 210px;
+}
+
+.banner-block {
+  height: 250px;
+}
+
+.ec-slide-item {
+  height: 65vh;
 }/*# sourceMappingURL=p_f.css.map */

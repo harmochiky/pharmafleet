@@ -9,20 +9,13 @@ import List from "../assets/images/icons/list.svg";
 import ProductCard from "../components/ProductListing/ProductCard";
 import ProductCardSlider from "../components/ProductListing/ProductCardSlider";
 
-export default function DepPage() {
+export default function CatPage() {
   return (
     <div className="border-top">
-      <BreadCrums from="Department" page="Mens" />
-      <DepHeader />
-      <ProductCardSlider
-        className=" mt-3"
-        headerClassName="border-bottom mb-4 pb-4 w-75 m-auto"
-        title="New products"
-        desc="Check out the newest products in health"
-      />
+      <BreadCrums className="border-bottom" from="Department" page={"Socks"} />
       <DepCategories
-        title="Health"
-        desc="You can dive deeper into a category but selecting where you want to go here"
+        title="Related"
+        desc="You might be interested in products from these categories aswell"
       />
       <section className="ec-page-content-bnr section-space-pb">
         <div className="container">

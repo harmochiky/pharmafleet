@@ -340,7 +340,9 @@ export default function index() {
                   href="javascript:void(0)"
                   className="ec-header-btn ec-sidebar-toggle"
                 >
-                  <button className="btn btn-menu-pr-btn">Start order</button>
+                  <button className="btn btn-menu-pr-btn my-">
+                    Start order
+                  </button>
                 </a>
                 <ul>
                   <li>

@@ -5,6 +5,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import DepPage from "./pages/DepPage";
+import CatPage from "./pages/CatPage";
 import Panel from "./pages/Panel";
 import BuyerApply from "./pages/BuyerApply";
 
@@ -14,6 +15,7 @@ class Router extends React.Component {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/s/:dep" component={DepPage} />
+        <Route exact path="/s/:dep/:cat" component={CatPage} />
         <Route exact path="/contact-us" component={Contact} />
         <Route exact path="/apply" component={BuyerApply} />
         <Route exact path="/panel" component={Panel} />

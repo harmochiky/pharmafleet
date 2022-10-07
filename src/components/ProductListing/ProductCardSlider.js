@@ -6,12 +6,13 @@ export default function ProductCardSlider({
   title,
   desc,
   headerClassName = "",
+  titleClassName = "",
   className = "",
 }) {
   return (
     <section className={"container " + className}>
       <div className={"text-center " + headerClassName}>
-        <h5 className="bold">{title}</h5>
+        <h5 className={"bold " + titleClassName}>{title}</h5>
         <div>{desc}</div>
       </div>
       <Swiper className="row" slidesPerView="auto">
