@@ -471,3 +471,42 @@ footer {
     }
   }
 }
+
+.filter__label:nth-child(1):before {
+  content: "R ";
+}
+.filter__label:nth-child(3):before {
+  content: "R ";
+}
+
+.ec-product-inner {
+  .quickview {
+    right: 20px !important;
+  }
+}
+
+.dep-menu-categories {
+  background-color: var(--background-grey);
+  // border-bottom: 1px solid var(--grey);
+  .category-header {
+    padding-bottom: 15px;
+  }
+  .category-item {
+    display: block;
+    border: 2px solid transparent;
+    border-bottom: 2px solid var(--pale-cerulean);
+    border-radius: 0px;
+    padding: 10px;
+    margin-right: 15px;
+    width: 120px;
+    font-weight: 600;
+    color: var(--black);
+    transition: 0.5 all;
+    &:hover {
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+      background-color: var(--beau-blue);
+      // border: 2px solid var(--prussian-blue);
+    }
+  }
+}
