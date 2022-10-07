@@ -416,6 +416,12 @@ footer .botton-container ul li {
   content: "R ";
 }
 
+.ec-product-inner .ec-pro-image {
+  display: flex;
+  min-height: 210px !important;
+  justify-content: center;
+  align-items: center;
+}
 .ec-product-inner .quickview {
   right: 20px !important;
 }
@@ -442,4 +448,8 @@ footer .botton-container ul li {
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
   background-color: var(--beau-blue);
+}
+
+.w210px {
+  width: 210px;
 }/*# sourceMappingURL=p_f.css.map */

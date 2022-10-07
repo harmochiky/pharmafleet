@@ -480,6 +480,12 @@ footer {
 }
 
 .ec-product-inner {
+  .ec-pro-image {
+    display: flex;
+    min-height: 210px !important;
+    justify-content: center;
+    align-items: center;
+  }
   .quickview {
     right: 20px !important;
   }
@@ -509,4 +515,8 @@ footer {
       // border: 2px solid var(--prussian-blue);
     }
   }
+}
+
+.w210px {
+  width: 210px;
 }

@@ -6,7 +6,7 @@ export default function DepCategories() {
   return (
     <div className="container dep-menu-categories py-4 shadow-sm mb-4 mt-4">
       <div className="category-header">
-        <h5 className="bold">Categories</h5>
+        <h5 className="bold">Health categories</h5>
         <div>
           You can dive deeper into a category but selecting where you want to go
           here

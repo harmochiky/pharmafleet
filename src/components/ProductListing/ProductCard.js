@@ -9,9 +9,13 @@ import Wishlist from "../../assets/images/icons/wishlist.svg";
 const Img =
   "https://www.dischem.co.za/media/catalog/product/cache/41664faeeb094fcc68fc0c934ed2e5ae/6/2/62ecd46061ddb_6009705668724.jpg";
 
-export default function ProductCard() {
+export default function ProductCard({ className }) {
   return (
-    <div className="col-lg-3 col-md-6 col-sm-6 col-xs-6 mb-6 pro-gl-content">
+    <div
+      className={
+        "col-lg-3 col-md-6 col-sm-6 col-xs-6 mb-6 pro-gl-content " + className
+      }
+    >
       <div className="ec-product-inner">
         <div className="ec-pro-image-outer">
           <div className="ec-pro-image">
