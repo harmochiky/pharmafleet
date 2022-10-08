@@ -191,7 +191,7 @@ export default function index() {
               {/* Ec Header Logo Start */}
               <div className="align-self-center">
                 <div className="header-logo">
-                  <a href="index.html">
+                  <Link to="/">
                     <img src={Logo} alt="Site Logo" />
                     <img
                       className="dark-logo"
@@ -199,7 +199,7 @@ export default function index() {
                       alt="Site Logo"
                       style={{ display: "none" }}
                     />
-                  </a>
+                  </Link>
                 </div>
               </div>
               {/* Ec Header Logo End */}
@@ -223,18 +223,23 @@ export default function index() {
               <div className="align-self-center">
                 <div className="ec-header-bottons">
                   {/* Header User Start */}
-                  <Link to="/user" className="ec-header-btn ec-header-user">
+                  <Link to="/login" className="ec-header-btn ec-header-user">
                     <div className="header-icon">
                       <img src={User} className="svg_img header_svg" alt="" />
                     </div>
                     <div className="ec-btn-desc">
-                      <span className="ec-btn-title">Account</span>
-                      <span className="ec-btn-stitle">Login</span>
+                      <span className="ec-btn-title bold">Account</span>
+                      <span className="ec-btn-stitle text-secondary">
+                        Login
+                      </span>
                     </div>
                   </Link>
                   {/* Header User End */}
                   {/* Header wishlist Start */}
-                  <a href="#" className="ec-header-btn ec-header-wishlist">
+                  <Link
+                    to="/wishlist"
+                    className="ec-header-btn ec-header-wishlist"
+                  >
                     <div className="header-icon">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -247,18 +252,15 @@ export default function index() {
                       </svg>
                     </div>
                     <div className="ec-btn-desc">
-                      <span className="ec-btn-title">Wishlist</span>
+                      <span className="ec-btn-title bold">Wishlist</span>
                       <span className="ec-btn-stitle">
                         <b className="ec-wishlist-count">0</b>-items
                       </span>
                     </div>
-                  </a>
+                  </Link>
                   {/* Header wishlist End */}
                   {/* Header Cart Start */}
-                  <a
-                    href="#ec-side-cart"
-                    className="ec-header-btn ec-side-toggle"
-                  >
+                  <Link to="/cart" className="ec-header-btn ec-side-toggle">
                     <div className="header-icon">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -273,12 +275,12 @@ export default function index() {
                       </svg>
                     </div>
                     <div className="ec-btn-desc">
-                      <span className="ec-btn-title">Cart</span>
+                      <span className="ec-btn-title bold">Cart</span>
                       <span className="ec-btn-stitle">
-                        <b className="ec-cart-count">3</b>-items
+                        <b className="ec-cart-count">2</b>-items
                       </span>
                     </div>
-                  </a>
+                  </Link>
                   {/* Header Cart End */}
                 </div>
               </div>
@@ -294,7 +296,7 @@ export default function index() {
             {/* Ec Header Logo Start */}
             <div className="col">
               <div className="header-logo">
-                <a href="index.html">
+                <Link to="/">
                   <img src={Logo} alt="Site Logo" />
                   <img
                     className="dark-logo"
@@ -302,7 +304,7 @@ export default function index() {
                     alt="Site Logo"
                     style={{ display: "none" }}
                   />
-                </a>
+                </Link>
               </div>
             </div>
             {/* Ec Header Logo End */}

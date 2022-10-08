@@ -8,7 +8,7 @@ import Footer from "./components/Footer";
 import { connect } from "react-redux";
 import SidePanel from "./components/Home/SidePanel";
 
-axios.defaults.baseURL = "http://localhost:5000";
+axios.defaults.baseURL = "http://localhost:5000/pharmafleet/us-central1/api";
 
 const mapStateToProps = (state) => {
   return {

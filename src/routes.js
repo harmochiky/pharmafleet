@@ -9,12 +9,22 @@ import CatPage from "./pages/CatPage";
 import Deals from "./pages/Deals";
 import Panel from "./pages/Panel";
 import BuyerApply from "./pages/BuyerApply";
+import ProductPage from "./pages/ProductPage";
+import Login from "./pages/Login";
+import WishList from "./pages/WishList";
+import Cart from "./pages/Cart";
+import Profile from "./pages/Profile";
 
 class Router extends React.Component {
   render() {
     return (
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/profile" component={Profile} />
+        <Route exact path="/cart" component={Cart} />
+        <Route exact path="/wishlist" component={WishList} />
+        <Route exact path="/p/:pid/:name" component={ProductPage} />
         <Route exact path="/deals" component={Deals} />
         <Route exact path="/s/:dep" component={DepPage} />
         <Route exact path="/s/:dep/:cat" component={CatPage} />

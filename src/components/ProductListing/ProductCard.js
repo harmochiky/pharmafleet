@@ -3,6 +3,7 @@ import QuickView from "../../assets/images/icons/quickview.svg";
 import Compare from "../../assets/images/icons/compare.svg";
 import Cart from "../../assets/images/icons/cart.svg";
 import Wishlist from "../../assets/images/icons/wishlist.svg";
+import { Link } from "react-router-dom";
 
 // import Img from "../../assets/images/product-image/7_1.jpg";
 
@@ -57,7 +58,7 @@ export default function ProductCard({ className }) {
         </div>
         <div className="ec-pro-content">
           <h5 className="ec-pro-title">
-            <a href="product-left-sidebar.html">USN Hyperbolic</a>
+            <Link to="/p/32/usn-hyperbolic">USN Hyperbolic</Link>
           </h5>
           <div className="ec-pro-rating">
             <i className="ecicon eci-star fill" />
