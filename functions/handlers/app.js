@@ -7,6 +7,8 @@ const dayjs = require("dayjs");
 const relativeTime = require("dayjs/plugin/relativeTime");
 
 const config = require("../util/config");
+const { user } = require("firebase-functions/v1/auth");
+const e = require("express");
 firebase.initializeApp(config);
 
 exports.wishlist = (res, req) => {
@@ -18,6 +20,65 @@ exports.wishlist = (res, req) => {
         users.push(x.data());
       });
       return req.status(200).json(users);
+    });
+};
+
+exports.login = (req, res) => {
+  let user_data = {
+    email: req.body.email,
+    password: req.body.password,
+  };
+
+  let token;
+
+  db.collection("users")
+    .where("email", "==", user_data.email)
+    .limit(1)
+    .get()
+    .then((data) => {
+      if (data.size <= 0) {
+        return res
+          .status(200)
+          .json({ error: "Email not registered to any account" });
+      } else {
+        if (data.docs[0].data().password !== user_data.password) {
+          return res.status(200).json({ error: "Incorrect password" });
+        }
+
+        return db.doc(`pharmacies/${data.docs[0].data().pharmacy_id}`).get();
+      }
+    })
+    .then((data) => {
+      if (!data.data().verified) {
+        return res.status(200).json({ error: "This pharmacy is not verified" });
+      } else {
+        return admin
+          .auth()
+          .createCustomToken(user_data.email, {
+            verified: data.data().verified,
+            pharmacy_name: data.data().pharmacy_name,
+          })
+          .then(function (customToken) {
+            token = customToken;
+          })
+          .then(() => {
+            firebase
+              .auth()
+              .signInWithCustomToken(token)
+              .then(() => {
+                return res.json({ token });
+              });
+          })
+          .catch((err) => {
+            console.log(err);
+            return res
+              .status(400)
+              .json({ message: "ERR#20 Something happend" });
+          });
+      }
+    })
+    .catch((err) => {
+      console.log(err);
     });
 };
 
@@ -48,7 +109,6 @@ exports.apply = (req, res) => {
     state: req.body.state,
     last_updated: current_date,
   };
-
   let pharmacy_data = {
     pharmacy_id: "",
     pharmacy_name: req.body.pharmacy_name,

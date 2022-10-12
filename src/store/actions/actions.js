@@ -5,12 +5,12 @@ import store from "../store";
 export const userCreated = (data) => (dispatch) => {
   setAuthorizationHeader(data);
   window.location.href = "/";
+  // dispatch({ type: "SET_UNAUTHENTICATED" });
 };
 
 export const logOutUser = () => (dispatch) => {
-  localStorage.removeItem(`vhqat`);
-  localStorage.removeItem("_546789325");
-  document.cookie = "vhqat=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  localStorage.removeItem(`pf_at`);
+  document.cookie = "pf_at=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
   delete axios.defaults.headers.common[`Authorization`];
   dispatch({ type: "SET_UNAUTHENTICATED" });
   window.location.reload();
@@ -18,6 +18,6 @@ export const logOutUser = () => (dispatch) => {
 
 const setAuthorizationHeader = (token) => {
   const ffat = `Bearer ${token}`;
-  setCookie("vhqat", token.token, 365);
+  setCookie("pf_at", token.token, 365);
   axios.defaults.headers.common["Authorization"] = ffat;
 };
