@@ -11,6 +11,62 @@ const { user } = require("firebase-functions/v1/auth");
 const e = require("express");
 firebase.initializeApp(config);
 
+exports.getProduct = (req, res) => {
+  db.doc(`products/${req.params.id}`)
+    .get()
+    .then((data) => {
+      return res.status(200).json(data.data());
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+exports.deleteProduct = (req, res) => {
+  db.doc(`products/${req.params.id}`)
+    .delete()
+    .then(() => {
+      return res.status(200).json("ok");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+exports.getAllProducts = (req, res) => {
+  db.collection("products")
+    .get()
+    .then((data) => {
+      let p = [];
+      data.forEach((x) => {
+        p.push(x.data());
+      });
+      return res.status(200).json(p);
+    });
+};
+
+exports.updateProduct = (req, res) => {
+  const product = {
+    product_name: req.body.product_name,
+    department: req.body.department,
+    category: req.body.category,
+    short_desc: req.body.short_desc,
+    desc: req.body.desc,
+    price: req.body.price,
+    moq: req.body.moq,
+    product_image: req.body.product_image,
+  };
+
+  db.doc(`products/${req.params.id}`)
+    .update({
+      ...product,
+    })
+    .then((data) => {
+      return res.status(200).json("ok");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
 exports.add_new = (req, res) => {
   const product = {
     product_name: req.body.product_name,
@@ -21,6 +77,9 @@ exports.add_new = (req, res) => {
     price: req.body.price,
     moq: req.body.moq,
     product_image: req.body.product_image,
+    created_at: new Date().toISOString(),
+    clicks: 0,
+    sales: 0,
   };
 
   db.collection("products")

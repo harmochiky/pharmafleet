@@ -22,11 +22,10 @@ export default function AddNew() {
   });
 
   const saveProduct = async () => {
-    let image_uri = await uploadImageAsync(file);
-
     document.getElementById("btn_save").innerHTML = "Saving..";
     document.getElementById("btn_save").disabled = true;
 
+    let image_uri = await uploadImageAsync(file);
     let pr_d = {
       ...data,
       product_image: image_uri,
@@ -84,7 +83,7 @@ export default function AddNew() {
                             <label>Product name*</label>
                             <input
                               type="text"
-                              name="pharmacy_name"
+                              name="product_name"
                               placeholder="Name of product"
                               onChange={on_change}
                               required
@@ -99,7 +98,7 @@ export default function AddNew() {
                                 id="ec-select-city"
                                 className="ec-register-select"
                               >
-                                <option>Select role</option>
+                                <option>Select category</option>
                                 {departments.map((x, index) => (
                                   <optgroup key={index} label={x.dep_name}>
                                     {x.categories.map((c, ci) => (

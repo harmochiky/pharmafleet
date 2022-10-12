@@ -16,6 +16,7 @@ import Cart from "./pages/Cart";
 import Profile from "./pages/Profile";
 import ManageProducts from "./pages/ManageProducts";
 import AddNew from "./pages/AddNew";
+import UpdateProduct from "./pages/UpdateProduct";
 
 class Router extends React.Component {
   render() {
@@ -23,6 +24,7 @@ class Router extends React.Component {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/add-new" component={AddNew} />
+        <Route exact path="/edit-product/:id" component={UpdateProduct} />
         <Route exact path="/manage-products" component={ManageProducts} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/profile" component={Profile} />

@@ -1,6 +1,7 @@
 import React from "react";
 import PaymentImg from "../../assets/img/payment-methods.png";
 import Logo from "../../assets/img/logo.png";
+import { Link } from "react-router-dom";
 
 export default function index() {
   let year = new Date().getUTCFullYear();
@@ -10,10 +11,10 @@ export default function index() {
         <div className="container">
           <div className="row">
             <div className="text-center footer-off-msg">
-              <span>Win a contest! Get this limited-editon</span>
-              <a href="#" target="_blank">
+              <span>Treat headaches with the most trusted brand</span>
+              <Link to="/p/eJ8DVULTlmxWABpO4oet/paracetamol-500mg-24-tablets">
                 View Detail
-              </a>
+              </Link>
             </div>
           </div>
         </div>
