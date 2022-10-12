@@ -624,4 +624,8 @@ h3,
   align-items: center;
   text-align: center;
   display: block;
+}
+
+.ec-user-account .ec-vendor-block-bg {
+  background-image: none !important;
 }/*# sourceMappingURL=p_f.css.map */

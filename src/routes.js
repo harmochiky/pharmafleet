@@ -14,12 +14,16 @@ import Login from "./pages/Login";
 import WishList from "./pages/WishList";
 import Cart from "./pages/Cart";
 import Profile from "./pages/Profile";
+import ManageProducts from "./pages/ManageProducts";
+import AddNew from "./pages/AddNew";
 
 class Router extends React.Component {
   render() {
     return (
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/add-new" component={AddNew} />
+        <Route exact path="/manage-products" component={ManageProducts} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/cart" component={Cart} />

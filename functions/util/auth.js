@@ -14,13 +14,17 @@ module.exports = (req, res, next) => {
   let decodedToken = jwt(idToken);
   req.user = decodedToken;
 
-  db.doc(`pharmacies/${req.user.claims.pharmacy_id}`)
+  db.doc(`users/${req.user.claims.user_id}`)
     .get()
     .then((data) => {
       if (!data.exists) {
         return res.status(400).json({ error: "ER#4041" });
       }
 
+      req.user_data = data.data();
+      return db.doc(`pharmacies/${req.user.claims.pharmacy_id}`).get();
+    })
+    .then((data) => {
       req.pharma = data.data();
       return next();
     })

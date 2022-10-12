@@ -11,8 +11,36 @@ const { user } = require("firebase-functions/v1/auth");
 const e = require("express");
 firebase.initializeApp(config);
 
+exports.add_new = (req, res) => {
+  const product = {
+    product_name: req.body.product_name,
+    department: req.body.department,
+    category: req.body.category,
+    short_desc: req.body.short_desc,
+    desc: req.body.desc,
+    price: req.body.price,
+    moq: req.body.moq,
+    product_image: req.body.product_image,
+  };
+
+  db.collection("products")
+    .add(product)
+    .then((data) => {
+      db.doc(`products/${data.id}`).update({
+        id: data.id,
+      });
+      return res.status(200).json({ id: data.id });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
 exports.getmydata = (req, res) => {
-  return res.status(200).json(req.pharma);
+  return res.status(200).json({
+    pharmacy: req.pharma,
+    user: req.user_data,
+  });
 };
 
 exports.wishlist = (res, req) => {

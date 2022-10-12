@@ -1,7 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
-export default function UserAccMenu() {
+const mapStateToProps = (state) => {
+  return {
+    user: state.core.user,
+  };
+};
+function UserAccMenu({ user }) {
   return (
     <div className="ec-shop-leftside ec-vendor-sidebar col-lg-3 col-md-12">
       <div className="ec-sidebar-wrap">
@@ -15,9 +21,12 @@ export default function UserAccMenu() {
                     User Profile
                   </Link>
                 </li>
-                <li>
-                  <a href="user-history.html">My Addresses</a>
-                </li>
+
+                {user.account_type === "admin" && (
+                  <li>
+                    <Link to="/manage-products">Manage products</Link>
+                  </li>
+                )}
                 <li>
                   <a href="user-history.html">History</a>
                 </li>
@@ -44,3 +53,5 @@ export default function UserAccMenu() {
     </div>
   );
 }
+
+export default connect(mapStateToProps, null)(UserAccMenu);

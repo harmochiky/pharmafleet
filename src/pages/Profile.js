@@ -2,11 +2,23 @@ import React from "react";
 import BreadCrums from "../components/Common/BreadCrums";
 import UserAccMenu from "../components/Common/UserAccMenu";
 
-import User from "../assets/images/user/1.jpg";
+import User from "../assets/img/logo.png";
 
 import EditIcon from "../assets/images/icons/edit.svg";
+import store from "../store/store";
+import { logOutUser } from "../store/actions/actions";
+import { connect } from "react-redux";
 
-export default function Profile() {
+const mapStateToProps = (state) => {
+  return {
+    core: state.core,
+  };
+};
+function Profile({ core }) {
+  const logout = () => {
+    store.dispatch(logOutUser());
+  };
+
   return (
     <div>
       <BreadCrums from="Home" page="Profile" />
@@ -23,6 +35,7 @@ export default function Profile() {
                         <div className="ec-vendor-block-img space-bottom-30">
                           <div className="ec-vendor-block-bg">
                             <a
+                              onClick={logout}
                               href="#"
                               className="btn btn-lg btn-primary"
                               data-link-action="editmodal"
@@ -30,26 +43,30 @@ export default function Profile() {
                               data-bs-toggle="modal"
                               data-bs-target="#edit_modal"
                             >
-                              Edit Detail
+                              Logout
                             </a>
                           </div>
                           <div className="ec-vendor-block-detail">
                             <img
                               className="v-img"
                               src={User}
+                              style={{
+                                objectFit: "contain",
+                              }}
                               alt="vendor image"
                             />
-                            <h5 className="name">Mariana Johns</h5>
-                            <p>( Business Man )</p>
+                            <h5 className="name">
+                              {core.user.firstname} {core.user.surname}
+                            </h5>
+                            <p>( {core.user.account_type} user)</p>
                           </div>
                           <p>
-                            Hello <span>Mariana Johns!</span>
+                            Hello <span> {core.user.firstname} !</span>
                           </p>
                           <p>
                             From your account you can easily view and track
-                            orders. You can manage and change your account
-                            information like address, contact information and
-                            history of orders.
+                            orders. You can also see your past orders and
+                            information
                           </p>
                         </div>
                         <h5>Account Information</h5>
@@ -64,22 +81,12 @@ export default function Profile() {
                                   title="Edit Detail"
                                   data-bs-toggle="modal"
                                   data-bs-target="#edit_modal"
-                                >
-                                  <img
-                                    src={EditIcon}
-                                    className="svg_img pro_svg"
-                                    alt="edit"
-                                  />
-                                </a>
+                                ></a>
                               </h6>
                               <ul>
                                 <li>
-                                  <strong>Email 1 : </strong>
-                                  support1@exapmle.com
-                                </li>
-                                <li>
-                                  <strong>Email 2 : </strong>
-                                  support2@exapmle.com
+                                  <strong>Email : </strong>
+                                  {core.user.email}
                                 </li>
                               </ul>
                             </div>
@@ -94,76 +101,12 @@ export default function Profile() {
                                   title="Edit Detail"
                                   data-bs-toggle="modal"
                                   data-bs-target="#edit_modal"
-                                >
-                                  <img
-                                    src={EditIcon}
-                                    className="svg_img pro_svg"
-                                    alt="edit"
-                                  />
-                                </a>
+                                ></a>
                               </h6>
                               <ul>
                                 <li>
-                                  <strong>Phone Nubmer 1 : </strong>(123) 123
-                                  456 7890
-                                </li>
-                                <li>
-                                  <strong>Phone Nubmer 2 : </strong>(123) 123
-                                  456 7890
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div className="col-md-6 col-sm-12">
-                            <div className="ec-vendor-detail-block ec-vendor-block-address mar-b-30">
-                              <h6>
-                                Address
-                                <a
-                                  href="javasript:void(0)"
-                                  data-link-action="editmodal"
-                                  title="Edit Detail"
-                                  data-bs-toggle="modal"
-                                  data-bs-target="#edit_modal"
-                                >
-                                  <img
-                                    src={EditIcon}
-                                    className="svg_img pro_svg"
-                                    alt="edit"
-                                  />
-                                </a>
-                              </h6>
-                              <ul>
-                                <li>
-                                  <strong>Home : </strong>123, 2150 Sycamore
-                                  Street, dummy text of the, San Jose,
-                                  California - 95131.
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div className="col-md-6 col-sm-12">
-                            <div className="ec-vendor-detail-block ec-vendor-block-address">
-                              <h6>
-                                Shipping Address
-                                <a
-                                  href="javasript:void(0)"
-                                  data-link-action="editmodal"
-                                  title="Edit Detail"
-                                  data-bs-toggle="modal"
-                                  data-bs-target="#edit_modal"
-                                >
-                                  <img
-                                    src={EditIcon}
-                                    className="svg_img pro_svg"
-                                    alt="edit"
-                                  />
-                                </a>
-                              </h6>
-                              <ul>
-                                <li>
-                                  <strong>Office : </strong>123, 2150 Sycamore
-                                  Street, dummy text of the, San Jose,
-                                  California - 95131.
+                                  <strong>Phone Number : </strong>{" "}
+                                  {core.user.phone_number}
                                 </li>
                               </ul>
                             </div>
@@ -181,3 +124,5 @@ export default function Profile() {
     </div>
   );
 }
+
+export default connect(mapStateToProps, null)(Profile);
