@@ -230,7 +230,10 @@ function Header({ authenticated }) {
               <div className="align-self-center">
                 <div className="ec-header-bottons">
                   {/* Header User Start */}
-                  <Link to="/login" className="ec-header-btn ec-header-user">
+                  <Link
+                    to={authenticated ? "/profile" : "/login"}
+                    className="ec-header-btn ec-header-user"
+                  >
                     <div className="header-icon">
                       <img src={User} className="svg_img header_svg" alt="" />
                     </div>

@@ -114,6 +114,7 @@ exports.apply = (req, res) => {
     pharmacy_name: req.body.pharmacy_name,
     previous_categories: [],
     wishlist_products: [],
+    cart_products: [],
     pharmacy_default_addr_id: "",
     pharmacy_website: req.body.pharmacy_website,
     total_orders: 0,

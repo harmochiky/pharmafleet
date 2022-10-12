@@ -2,6 +2,14 @@ import axios from "axios";
 import { setCookie } from "../../util/cookies";
 import store from "../store";
 
+export const getUserData = (data) => (dispatch) => {
+  // console.log({ data });
+  dispatch({ type: "SET_AUTHENTICATED" });
+  const ffat = `Bearer ${data}`;
+  axios.defaults.headers.common["Authorization"] = ffat;
+  // setAuthorizationHeader(data);
+};
+
 export const userCreated = (data) => (dispatch) => {
   setAuthorizationHeader(data);
   window.location.href = "/";
