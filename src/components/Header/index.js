@@ -12,8 +12,15 @@ import CategoryIcon from "../../assets/img/icons/category_icon.svg";
 import { Link } from "react-router-dom";
 import menu_items from "../../util/departments.json";
 import textToUrl from "../../util/textToUrl";
+import { connect } from "react-redux";
 
-export default function index() {
+const mapStateToProps = (state) => {
+  return {
+    authenticated: state.core.authenticated,
+  };
+};
+
+function Header({ authenticated }) {
   return (
     <header className="ec-header">
       {/*Ec Header Top Start */}
@@ -229,9 +236,16 @@ export default function index() {
                     </div>
                     <div className="ec-btn-desc">
                       <span className="ec-btn-title bold">Account</span>
-                      <span className="ec-btn-stitle text-secondary">
-                        Login
-                      </span>
+
+                      {authenticated ? (
+                        <span className="ec-btn-stitle text-secondary">
+                          Profile
+                        </span>
+                      ) : (
+                        <span className="ec-btn-stitle text-secondary">
+                          Login
+                        </span>
+                      )}
                     </div>
                   </Link>
                   {/* Header User End */}
@@ -277,7 +291,7 @@ export default function index() {
                     <div className="ec-btn-desc">
                       <span className="ec-btn-title bold">Cart</span>
                       <span className="ec-btn-stitle">
-                        <b className="ec-cart-count">2</b>-items
+                        <b className="ec-cart-count">0</b>-items
                       </span>
                     </div>
                   </Link>
@@ -338,50 +352,68 @@ export default function index() {
           <div className="row">
             <div className="col-md-12 align-self-center">
               <div className="ec-main-menu">
-                <Link
-                  to="/start-order"
-                  className="ec-header-btn ec-sidebar-toggle"
-                >
-                  <button className="btn btn-menu-pr-btn my-">
-                    Start order
-                  </button>
-                </Link>
+                {authenticated ? (
+                  <Link
+                    to="/start-order"
+                    className="ec-header-btn ec-sidebar-toggle"
+                  >
+                    <button className="btn btn-menu-pr-btn my-">
+                      Start order
+                    </button>
+                  </Link>
+                ) : (
+                  ""
+                )}
                 <ul>
-                  <li>
-                    <Link to="/">Home</Link>
-                  </li>
-                  <li className="dropdown">
-                    <Link to="">Categories</Link>
-                    <ul className="sub-menu">
-                      {menu_items.map((x, index) => (
-                        <li key={index} className="dropdown position-static">
-                          <Link to={`/s/${textToUrl(x.dep_name)}`}>
-                            {x.dep_name}
-                            <i className="ecicon eci-angle-right" />
-                          </Link>
-                          <ul className="sub-menu sub-menu-child">
-                            {x.categories.map((c, cindex) => (
-                              <li key={cindex}>
-                                <Link
-                                  to={`/s/${textToUrl(x.dep_name)}/${textToUrl(
-                                    c.cat_name,
-                                  )}`}
-                                >
-                                  {c.cat_name}
-                                </Link>
-                              </li>
-                            ))}
-                          </ul>
-                        </li>
-                      ))}
-                    </ul>
-                  </li>
-                  <li>
-                    <Link to="/deals">Todays deals</Link>
-                  </li>
-                  <li>
-                    <Link to="/apply">Apply</Link>
-                  </li>
+                  {authenticated && (
+                    <li>
+                      <Link to="/">Home</Link>
+                    </li>
+                  )}
+                  {authenticated && (
+                    <li className="dropdown">
+                      <Link to="">Categories</Link>
+                      <ul className="sub-menu">
+                        {menu_items.map((x, index) => (
+                          <li key={index} className="dropdown position-static">
+                            <Link to={`/s/${textToUrl(x.dep_name)}`}>
+                              {x.dep_name}
+                              <i className="ecicon eci-angle-right" />
+                            </Link>
+                            <ul className="sub-menu sub-menu-child">
+                              {x.categories.map((c, cindex) => (
+                                <li key={cindex}>
+                                  <Link
+                                    to={`/s/${textToUrl(
+                                      x.dep_name,
+                                    )}/${textToUrl(c.cat_name)}`}
+                                  >
+                                    {c.cat_name}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </li>
+                        ))}
+                      </ul>
+                    </li>
+                  )}
+
+                  {authenticated && (
+                    <li>
+                      <Link to="/deals">Todays deals</Link>
+                    </li>
+                  )}
+                  {!authenticated && (
+                    <li>
+                      <Link to="/apply">Apply</Link>
+                    </li>
+                  )}
+                  {!authenticated && (
+                    <li>
+                      <Link to="/track-order">Track order</Link>
+                    </li>
+                  )}
                   <li>
                     <Link to="/contact-us">Contact us</Link>
                   </li>
@@ -654,265 +686,6 @@ export default function index() {
                   </li>
                 </ul>
               </li>
-              <li>
-                <a href="javascript:void(0)">Others</a>
-                <ul className="sub-menu">
-                  <li>
-                    <a href="javascript:void(0)">Mail Confirmation</a>
-                    <ul className="sub-menu">
-                      <li>
-                        <a href="email-template-confirm-1.html">
-                          Mail Confirmation 1
-                        </a>
-                      </li>
-                      <li>
-                        <a href="email-template-confirm-2.html">
-                          Mail Confirmation 2
-                        </a>
-                      </li>
-                      <li>
-                        <a href="email-template-confirm-3.html">
-                          Mail Confirmation 3
-                        </a>
-                      </li>
-                      <li>
-                        <a href="email-template-confirm-4.html">
-                          Mail Confirmation 4
-                        </a>
-                      </li>
-                      <li>
-                        <a href="email-template-confirm-5.html">
-                          Mail Confirmation 5
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)">Mail Reset password</a>
-                    <ul className="sub-menu">
-                      <li>
-                        <a href="email-template-forgot-password-1.html">
-                          Reset password 1
-                        </a>
-                      </li>
-                      <li>
-                        <a href="email-template-forgot-password-2.html">
-                          Reset password 2
-                        </a>
-                      </li>
-                      <li>
-                        <a href="email-template-forgot-password-3.html">
-                          Reset password 3
-                        </a>
-                      </li>
-                      <li>
-                        <a href="email-template-forgot-password-4.html">
-                          Reset password 4
-                        </a>
-                      </li>
-                      <li>
-                        <a href="email-template-forgot-password-5.html">
-                          Reset password 5
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)">Mail Promotional</a>
-                    <ul className="sub-menu">
-                      <li>
-                        <a href="email-template-offers-1.html">Offer Mail 1</a>
-                      </li>
-                      <li>
-                        <a href="email-template-offers-2.html">Offer Mail 2</a>
-                      </li>
-                      <li>
-                        <a href="email-template-offers-3.html">Offer Mail 3</a>
-                      </li>
-                      <li>
-                        <a href="email-template-offers-4.html">Offer Mail 4</a>
-                      </li>
-                      <li>
-                        <a href="email-template-offers-5.html">Offer Mail 5</a>
-                      </li>
-                      <li>
-                        <a href="email-template-offers-6.html">Offer Mail 6</a>
-                      </li>
-                      <li>
-                        <a href="email-template-offers-7.html">Offer Mail 7</a>
-                      </li>
-                      <li>
-                        <a href="email-template-offers-8.html">Offer Mail 8</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)">Vendor Account Pages</a>
-                    <ul className="sub-menu">
-                      <li>
-                        <a href="vendor-dashboard.html">Vendor Dashboard</a>
-                      </li>
-                      <li>
-                        <a href="vendor-profile.html">Vendor Profile</a>
-                      </li>
-                      <li>
-                        <a href="vendor-uploads.html">Vendor Uploads</a>
-                      </li>
-                      <li>
-                        <a href="vendor-settings.html">Vendor Settings</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)">User Account Pages</a>
-                    <ul className="sub-menu">
-                      <li>
-                        <a href="user-profile.html">User Profile</a>
-                      </li>
-                      <li>
-                        <a href="user-history.html">User History</a>
-                      </li>
-                      <li>
-                        <a href="wishlist.html">Wishlist</a>
-                      </li>
-                      <li>
-                        <a href="track-order.html">Track Order</a>
-                      </li>
-                      <li>
-                        <a href="user-invoice.html">User Invoice</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)">Construction Pages</a>
-                    <ul className="sub-menu">
-                      <li>
-                        <a href="404-error-page.html">404 Error Page</a>
-                      </li>
-                      <li>
-                        <a href="under-maintenance.html">Maintenance Page</a>
-                      </li>
-                      <li>
-                        <a href="coming-soon.html">Comming Soon Page</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)">Vendor Catalog Pages</a>
-                    <ul className="sub-menu">
-                      <li>
-                        <a href="catalog-single-vendor.html">
-                          Catalog Single Vendor
-                        </a>
-                      </li>
-                      <li>
-                        <a href="catalog-multi-vendor.html">
-                          Catalog Multi Vendor
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="javascript:void(0)">Pages</a>
-                <ul className="sub-menu">
-                  <li>
-                    <a href="about-us.html">About Us</a>
-                  </li>
-                  <li>
-                    <Link to="/contact-us">Contact Us</Link>
-                  </li>
-                  <li>
-                    <a href="cart.html">Cart</a>
-                  </li>
-                  <li>
-                    <a href="checkout.html">Checkout</a>
-                  </li>
-                  <li>
-                    <a href="compare.html">Compare</a>
-                  </li>
-                  <li>
-                    <a href="faq.html">FAQ</a>
-                  </li>
-                  <li>
-                    <a href="login.html">Login</a>
-                  </li>
-                  <li>
-                    <a href="register.html">Register</a>
-                  </li>
-                  <li>
-                    <a href="track-order.html">Track Order</a>
-                  </li>
-                  <li>
-                    <a href="terms-condition.html">Terms Condition</a>
-                  </li>
-                  <li>
-                    <a href="privacy-policy.html">Privacy Policy</a>
-                  </li>
-                </ul>
-              </li>
-              <li className="dropdown">
-                <a href="javascript:void(0)">Blog</a>
-                <ul className="sub-menu">
-                  <li>
-                    <a href="blog-left-sidebar.html">Blog left sidebar</a>
-                  </li>
-                  <li>
-                    <a href="blog-right-sidebar.html">Blog right sidebar</a>
-                  </li>
-                  <li>
-                    <a href="blog-detail-left-sidebar.html">
-                      Blog detail left sidebar
-                    </a>
-                  </li>
-                  <li>
-                    <a href="blog-detail-right-sidebar.html">
-                      Blog detail right sidebar
-                    </a>
-                  </li>
-                  <li>
-                    <a href="blog-full-width.html">Blog full width</a>
-                  </li>
-                  <li>
-                    <a href="blog-detail-full-width.html">
-                      Blog detail full width
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li className="dropdown">
-                <a href="javascript:void(0)">Elements</a>
-                <ul className="sub-menu">
-                  <li>
-                    <a href="elemets-products.html">Products</a>
-                  </li>
-                  <li>
-                    <a href="elemets-typography.html">Typography</a>
-                  </li>
-                  <li>
-                    <a href="elemets-title.html">Titles</a>
-                  </li>
-                  <li>
-                    <a href="elemets-categories.html">Categories</a>
-                  </li>
-                  <li>
-                    <a href="elemets-buttons.html">Buttons</a>
-                  </li>
-                  <li>
-                    <a href="elemets-tabs.html">Tabs</a>
-                  </li>
-                  <li>
-                    <a href="elemets-accordions.html">Accordions</a>
-                  </li>
-                  <li>
-                    <a href="elemets-blog.html">Blogs</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="offer.html">Hot Offers</a>
-              </li>
             </ul>
           </div>
           <div className="header-res-lan-curr">
@@ -999,3 +772,5 @@ export default function index() {
     </header>
   );
 }
+
+export default connect(mapStateToProps, null)(Header);

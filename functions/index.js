@@ -4,10 +4,10 @@ const app = require("express")();
 const cors = require("cors");
 app.use(cors());
 
-const { signup, wishlist } = require("./handlers/app");
+const { apply, wishlist } = require("./handlers/app");
 const auth = require("./util/auth");
 
-app.post("/signup", signup);
+app.post("/apply", apply);
 app.get("/wishlist", wishlist);
 
 exports.api = functions.https.onRequest(app);

@@ -684,3 +684,31 @@ h3,
     border: 1px solid var(--cerulean-crayola);
   }
 }
+
+.input-i {
+  display: block;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 1px solid #ededed;
+  background: #ffffff;
+  background-image: none;
+  flex: 1 1;
+  padding: 0 10px;
+  color: #777777;
+  cursor: pointer;
+  height: 47px;
+  padding: 10px;
+  span {
+    display: flex;
+    height: 100%;
+    width: fit-content;
+    // width: 20%;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: var(--pale-cerulean);
+    align-items: center;
+    text-align: center;
+    display: block;
+  }
+}

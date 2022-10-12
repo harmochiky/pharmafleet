@@ -593,4 +593,35 @@ h3,
   width: 100px;
   height: 100px;
   border: 1px solid var(--cerulean-crayola);
+}
+
+.input-i {
+  display: block;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 1px solid #ededed;
+  background: #ffffff;
+  background-image: none;
+  flex: 1 1;
+  padding: 0 10px;
+  color: #777777;
+  cursor: pointer;
+  height: 47px;
+  padding: 10px;
+}
+.input-i span {
+  display: flex;
+  height: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-left: 20px;
+  padding-right: 20px;
+  background: var(--pale-cerulean);
+  align-items: center;
+  text-align: center;
+  display: block;
 }/*# sourceMappingURL=p_f.css.map */

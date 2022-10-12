@@ -21,7 +21,7 @@ exports.wishlist = (res, req) => {
     });
 };
 
-exports.signup = (res, req) => {
+exports.apply = (req, res) => {
   let current_date = new Date().toISOString();
 
   let user_data = {
@@ -31,7 +31,7 @@ exports.signup = (res, req) => {
     surname: req.body.surname,
     password: req.body.password,
     phone_number: req.body.phone_number,
-    user_role: req.body.user_role,
+    user_role: req.body.role,
     user_created: current_date,
     user_verified: false,
     doc_user_id: "",
@@ -126,7 +126,7 @@ exports.signup = (res, req) => {
         });
     })
     .then(() => {
-      res.status(200).json({ token });
+      res.status(200).json({ status: "done" });
     })
     .catch((err) => {
       console.error(err);
@@ -135,8 +135,11 @@ exports.signup = (res, req) => {
           .status(400)
           .json({ password: "The password you entered is weak ! " });
       }
-      if (err.code === "auth/email-already-in-use") {
-        return res.status(400).json({ error: "This email is already in use" });
+
+      if (err.code === "auth/email-already-exists") {
+        return res.status(200).json({ error: err.message });
+      } else if (err.code === "auth/email-already-in-use") {
+        return res.status(200).json({ error: "This email is already in use" });
       } else {
         return res.status(500).json({ error: err.code });
       }
