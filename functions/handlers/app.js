@@ -11,6 +11,10 @@ const { user } = require("firebase-functions/v1/auth");
 const e = require("express");
 firebase.initializeApp(config);
 
+exports.getmydata = (req, res) => {
+  return res.status(200).json(req.pharma);
+};
+
 exports.wishlist = (res, req) => {
   db.collection("users")
     .get()
@@ -29,7 +33,7 @@ exports.login = (req, res) => {
     password: req.body.password,
   };
 
-  let token;
+  let token, user;
 
   db.collection("users")
     .where("email", "==", user_data.email)
@@ -45,6 +49,8 @@ exports.login = (req, res) => {
           return res.status(200).json({ error: "Incorrect password" });
         }
 
+        user = data.docs[0].data();
+
         return db.doc(`pharmacies/${data.docs[0].data().pharmacy_id}`).get();
       }
     })
@@ -57,6 +63,8 @@ exports.login = (req, res) => {
           .createCustomToken(user_data.email, {
             verified: data.data().verified,
             pharmacy_name: data.data().pharmacy_name,
+            pharmacy_id: data.data().pharmacy_id,
+            user_id: user.user_id,
           })
           .then(function (customToken) {
             token = customToken;

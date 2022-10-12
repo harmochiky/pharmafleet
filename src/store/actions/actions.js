@@ -8,6 +8,19 @@ export const getUserData = (data) => (dispatch) => {
   const ffat = `Bearer ${data}`;
   axios.defaults.headers.common["Authorization"] = ffat;
   // setAuthorizationHeader(data);
+
+  axios
+    .get("/getmydata")
+    .then((data) => {
+      console.log(data.data);
+      dispatch({
+        type: "SET_PHARMACY_DATA",
+        payload: data.data,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 };
 
 export const userCreated = (data) => (dispatch) => {

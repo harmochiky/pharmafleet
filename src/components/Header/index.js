@@ -17,10 +17,12 @@ import { connect } from "react-redux";
 const mapStateToProps = (state) => {
   return {
     authenticated: state.core.authenticated,
+    wishlist_products: state.core.pharmacy_data.wishlist_products.length,
+    cart_products: state.core.pharmacy_data.cart_products.length,
   };
 };
 
-function Header({ authenticated }) {
+function Header({ authenticated, wishlist_products, cart_products }) {
   return (
     <header className="ec-header">
       {/*Ec Header Top Start */}
@@ -271,7 +273,8 @@ function Header({ authenticated }) {
                     <div className="ec-btn-desc">
                       <span className="ec-btn-title bold">Wishlist</span>
                       <span className="ec-btn-stitle">
-                        <b className="ec-wishlist-count">0</b>-items
+                        <b className="ec-wishlist-count">{wishlist_products}</b>
+                        -items
                       </span>
                     </div>
                   </Link>
@@ -294,7 +297,7 @@ function Header({ authenticated }) {
                     <div className="ec-btn-desc">
                       <span className="ec-btn-title bold">Cart</span>
                       <span className="ec-btn-stitle">
-                        <b className="ec-cart-count">0</b>-items
+                        <b className="ec-cart-count">{cart_products}</b>-items
                       </span>
                     </div>
                   </Link>
